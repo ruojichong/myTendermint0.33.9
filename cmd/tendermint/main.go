@@ -44,7 +44,7 @@ func main() {
 	// Create & start node
 	rootCmd.AddCommand(cmd.NewRunNodeCmd(nodeFunc))
 
-	cmd := cli.PrepareBaseCmd(rootCmd, "TM", os.ExpandEnv(filepath.Join("$HOME", cfg.DefaultTendermintDir)))
+	cmd := cli.PrepareBaseCmd(rootCmd, "TM", os.ExpandEnv(filepath.Join(".", cfg.DefaultTendermintDir)))
 	if err := cmd.Execute(); err != nil {
 		panic(err)
 	}
